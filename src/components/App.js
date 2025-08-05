@@ -11,9 +11,12 @@ class App extends Component {
         };
         this.renderChoice = this.renderBallOrButton.bind(this)
         this.buttonClickHandler = this.buttonClickHandler.bind(this)
+        // this.handleKeyDown = this.handleKeyDown.bind(this);
+
     };
 
     buttonClickHandler() {
+        this.setState({renderBall:true})
    
    }
     renderBallOrButton() {
@@ -24,9 +27,21 @@ class App extends Component {
 		}
     }
 
+    handleKeyDown=(event)=> {
+  if (event.key === "ArrowRight") {
+    const newPos = this.state.posi + 5;
+
+    this.setState({
+      posi: newPos,
+      ballPosition: { left: `${newPos}px` }
+    });
+  }
+}
+
+
     // bind ArrowRight keydown event
     componentDidMount() {
-      
+      window.addEventListener("keydown",this.handleKeyDown)
     }
 
     render() {
@@ -40,3 +55,4 @@ class App extends Component {
 
 
 export default App;
+
