@@ -11,7 +11,7 @@ class App extends Component {
         };
         this.renderChoice = this.renderBallOrButton.bind(this)
         this.buttonClickHandler = this.buttonClickHandler.bind(this)
-        // this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
 
     };
 
@@ -27,7 +27,7 @@ class App extends Component {
 		}
     }
 
-    handleKeyDown=(event)=> {
+    handleKeyDown(event) {
   if (event.key === "ArrowRight") {
     const newPos = this.state.posi + 5;
 
