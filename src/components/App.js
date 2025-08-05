@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     handleKeyDown(event) {
-  if (event.key === "ArrowRight") {
+  if (event.keyCode === 39) {
     const newPos = this.state.posi + 5;
 
     this.setState({
